@@ -3,7 +3,6 @@ package com.example.ecom_proj.service;
 import com.example.ecom_proj.model.Product;
 import com.example.ecom_proj.repo.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -43,5 +42,9 @@ public class ProductService {
 
     public void deleteProductById(int productId) {
         repository.deleteById(productId);
+    }
+
+    public List<Product> searchProducts(String keyword) {
+        return repository.searchProducts(keyword);
     }
 }
